@@ -158,3 +158,10 @@ if __name__ == "__main__":
     plt.savefig(
         f"./save/acc/fed_{args.dataset}_{args.model}_{args.epochs}_C[{args.frac}]_iid[{args.iid}]_E[{args.local_ep}]_B[{args.local_bs}]_acc.png"
     )
+
+    with open(
+        f"./save/acc_txt/fed_{args.dataset}_{args.model}_{args.epochs}_C[{args.frac}]_iid[{args.iid}]_E[{args.local_ep}]_B[{args.local_bs}]_acc.txt",
+        "w",
+    ) as f:
+        for row in train_accuracy:
+            f.write(f"{row}\n")
